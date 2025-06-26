@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev --env-file=.env --watch --respawn --transpile-only src/app.ts"
+    "dev": "ts-node-dev --env-file=.env --watch --respawn --transpile-only api/app.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.2",
     "@types/node": "^22.15.29",
     "ts-node-dev": "^2.0.0",
@@ -17,6 +18,7 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.50.0",
+    "cors": "^2.8.5",
     "express": "^5.1.0"
   }
 }

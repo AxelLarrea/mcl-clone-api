@@ -4,8 +4,21 @@ class ProductModel {
     async getSearch(query: string) {
         const { data, error } = await supabase
             .from('product')
-            .select('name, image, price')
-            .ilike('name', `%${query}%`) // ilike is case insensitive
+            .select(`
+                product_id
+                ,name
+                ,price
+                ,image
+                ,category
+                ,seller
+                ,rating
+                ,internationalShipping
+                ,city
+                ,condition
+                ,brand
+                ,spec(color)
+            `) // join con tabla spec
+            .ilike('name', `%${query}%`) // ilike es case insensitive
 
         if (error) throw new Error(error.message);
         return data;
