@@ -27,7 +27,21 @@ class ProductModel {
     async getOne(id: string) {
         const { data, error } = await supabase
             .from('product')
-            .select('*')
+            .select(`
+                product_id
+                ,name
+                ,price
+                ,image
+                ,category
+                ,seller
+                ,rating
+                ,internationalShipping
+                ,city
+                ,condition
+                ,brand
+                ,spec(color, weight, model)
+                ,comment(comment)
+            `)
             .eq('product_id', id)
         
         if (error) throw new Error(error.message);
