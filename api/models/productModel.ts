@@ -39,6 +39,7 @@ class ProductModel {
                 ,city
                 ,condition
                 ,brand
+                ,description
                 ,spec(color, weight, model)
                 ,comment(comment)
             `)
